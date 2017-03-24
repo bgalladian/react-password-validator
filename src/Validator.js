@@ -30,13 +30,14 @@ class Validator extends Component {
 
     validity () {
       if (this.state.pw === this.state.pwConfirm){
-          this.setState({ valid: true})
-      } else { this.setState({valid: false})
+          alert("You is smart, they match!")
+      } else {
+          alert("Try again dummy, they don't match")
       }
     }
 
   render() {
-    let message = this.state.valid ? "Passwords match son!" : "Passwords do not match, try again homie!"
+
     return (
       <div className="form">
         <h1>Sign Up</h1>
@@ -44,7 +45,7 @@ class Validator extends Component {
         <input type="password" onChange={(e) => this.handlePw(e)}  placeholder="Password" />
         <input type="password" onChange={(e) => this.handlePwConfirm(e)}  placeholder="Confirm Password" />
         <input type="submit" onClick={(e) => this.handleSubmit(e)}value="Submit" />
-        <p>{message}</p>
+
       </div>
     );
   }
